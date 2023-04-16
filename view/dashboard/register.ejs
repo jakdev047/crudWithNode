@@ -12,9 +12,35 @@
 </head>
 
 <body>
-  <h2 class="text-3xl font-bold underline">
-    Register page
-  </h2>
+  <div class="register flex justify-center items-center w-screen h-screen bg-slate-300">
+    <div class="w-[350px] px-8 py-6 bg-white rounded-md shadow-sm">
+      <h2 class="text-2xl font-bold text-center text-slate-500">
+        Register
+      </h2>
+      <form action="">
+        <!-- name -->
+        <div class="flex flex-col gap-1 mb-2">
+          <label for="name">Name</label>
+          <input class="px-3 py-2 outline-0 border rounded-md bg-[#f9f9f9] focus:border-green-600" type="text"
+            placeholder="Name..." name="name" id="name">
+        </div>
+
+        <!-- email -->
+        <div class="flex flex-col gap-1 mb-2">
+          <label for="email">Email</label>
+          <input class="px-3 py-2 outline-0 border rounded-md bg-[#f9f9f9] focus:border-green-600" type="email"
+            placeholder="Email..." name="email" id="email">
+        </div>
+
+        <!-- password -->
+        <div class="flex flex-col gap-1 mb-2">
+          <label for="password">Password</label>
+          <input class="px-3 py-2 outline-0 border rounded-md bg-[#f9f9f9] focus:border-green-600" type="password"
+            placeholder="Password..." name="password" id="password">
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>
