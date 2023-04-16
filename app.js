@@ -1,6 +1,7 @@
 // required file
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 
 // express instanse create
 const app = express();
@@ -14,16 +15,17 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "view")));
 
 // routing
-const authRoute = require("./routes/authRoute");
-
-app.use("/auth", authRoute);
+fs.readdirSync(`${__dirname}/routes`).map((fileName) => {
+  app.use(
+    "/auth",
+    require(path
+      .join(`${__dirname}`, "/routes", `${fileName}`)
+      .replace(".js", ""))
+  );
+});
 
 app.get("/", (req, res, next) => {
   res.send("home");
-});
-
-app.use((err, req, res, next) => {
-  res.status(500).render("error", { title: "Error" });
 });
 
 // listen method
