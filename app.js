@@ -14,8 +14,12 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "view")));
 
 // routing
+const authRoute = require("./routes/authRoute");
+
+app.use("/auth", authRoute);
+
 app.get("/", (req, res, next) => {
-  return res.render("index");
+  res.send("home");
 });
 
 app.use((err, req, res, next) => {
