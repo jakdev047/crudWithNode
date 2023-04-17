@@ -21,12 +21,18 @@
       <h2 class="text-2xl font-bold text-center text-slate-500">
         Register
       </h2>
-      <form action="">
+      <form action="/auth/user-register" method="post" enctype="multipart/form-data">
         <!-- name -->
         <div class="flex flex-col gap-1 mb-2">
           <label class="text-slate-500" for="name">Name</label>
           <input class="px-3 py-2 outline-0 border rounded-md bg-[#f9f9f9] focus:border-green-600" type="text"
             placeholder="Name..." name="name" id="name">
+
+          <% if(error && error.name) {%>
+            <p class="text-red-600 text-sm">
+              <%= error.name %>
+            </p>
+            <%}%>
         </div>
 
         <!-- email -->
@@ -34,6 +40,11 @@
           <label class="text-slate-500" for="email">Email</label>
           <input class="px-3 py-2 outline-0 border rounded-md bg-[#f9f9f9] focus:border-green-600" type="email"
             placeholder="Email..." name="email" id="email">
+          <% if(error && error.email) {%>
+            <p class="text-red-600 text-sm">
+              <%= error.email %>
+            </p>
+            <%}%>
         </div>
 
         <!-- password -->
@@ -41,6 +52,11 @@
           <label class="text-slate-500" for="password">Password</label>
           <input class="px-3 py-2 outline-0 border rounded-md bg-[#f9f9f9] focus:border-green-600" type="password"
             placeholder="Password..." name="password" id="password">
+          <% if(error && error.password) {%>
+            <p class="text-red-600 text-sm">
+              <%= error.password %>
+            </p>
+            <%}%>
         </div>
 
         <!-- image -->
@@ -52,6 +68,11 @@
             <label class="p-2 text-white cursor-pointer bg-blue-500" for="image">Browser</label>
           </div>
           <input class="hidden" type="file" id="image" name="image">
+          <% if(error && error.image) {%>
+            <p class="text-red-600 text-sm">
+              <%= error.image %>
+            </p>
+            <%}%>
         </div>
 
         <!-- button -->
