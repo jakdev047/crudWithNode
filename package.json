@@ -6,7 +6,7 @@
   "author": "Jubayer Alam Khan",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon server.js",
     "style": "npx tailwindcss -i ./view/assets/css/input.css -o ./view/assets/css/output.css --watch"
   },
   "dependencies": {
